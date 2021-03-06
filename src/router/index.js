@@ -1,22 +1,36 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import BookManage from '../views/BookManage'
+import AddBook from '../views/AddBook'
+import Index from '../views/Index'
+import BookUpdate from '../views/BookUpdate'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "图书管理",
+    component: Index,
+    show: true,
+    redirect: "/BookManage",
+    children: [
+      {
+        path: "/BookManage",
+        name: "查询图书",
+        component: BookManage
+      },
+      {
+        path: "/AddBook",
+        name: "添加图书",
+        component: AddBook
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/update',
+    component: BookUpdate,
+    show: false
   }
 ]
 
