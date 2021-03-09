@@ -4,6 +4,7 @@ import BookManage from '../views/BookManage'
 import AddBook from '../views/AddBook'
 import Index from '../views/Index'
 import BookUpdate from '../views/BookUpdate'
+import FamilyLunch from '../views/memento/FamilyLunch'
 
 Vue.use(VueRouter)
 
@@ -24,9 +25,15 @@ const routes = [
         path: "/AddBook",
         name: "添加图书",
         component: AddBook
+      },
+      {
+        path: "/AddFamilyLunch",
+        name: "添加家庭套餐",
+        component: FamilyLunch
       }
     ]
   },
+  
   {
     path: '/update',
     component: BookUpdate,
