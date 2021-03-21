@@ -51,7 +51,7 @@
     <div v-for="(item,index) in lunchlist"
       :key="index"
       class="text item">
-      {{'列表内容 ' + item.staple }}+{{item.sauce}}+{{item.vegetable}}
+      {{'list content : ' + item.staple }}+{{item.sauce}}+{{item.vegetable}}
     </div>
   </div>
 </template>
@@ -77,8 +77,8 @@ export default {
           console.log(resp);
           _this.lunchlist = resp.data;
           if (resp.data != null) {
-            _this.$alert("取消成功！", "消息", {
-              confirmButtonText: "确定",
+            _this.$alert("cancel success！", "message", {
+              confirmButtonText: "confirm",
             });
           }
         });
@@ -96,8 +96,8 @@ export default {
           console.log(resp);
           _this.lunchlist = resp.data;
           if (resp.data != null) {
-            _this.$alert("添加成功！", "消息", {
-              confirmButtonText: "确定",
+            _this.$alert("add success！", "message", {
+              confirmButtonText: "confirm",
             });
           }
         });

@@ -5,32 +5,38 @@ import AddBook from '../views/AddBook'
 import Index from '../views/Index'
 import BookUpdate from '../views/BookUpdate'
 import FamilyLunch from '../views/memento/FamilyLunch'
+import Coffee from '../views/bridge/Coffee'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: "/",
-    name: "图书管理",
+    name: "Food Management",
     component: Index,
     show: true,
     redirect: "/BookManage",
     children: [
       {
         path: "/BookManage",
-        name: "查询图书",
+        name: "query book",
         component: BookManage
       },
       {
         path: "/AddBook",
-        name: "添加图书",
+        name: "add book",
         component: AddBook
       },
       {
         path: "/AddFamilyLunch",
-        name: "添加家庭套餐",
+        name: "add family lunch",
         component: FamilyLunch
-      }
+      },
+      {
+        path: "/AddCoffee",
+        name: "add coffee",
+        component: Coffee
+      },
     ]
   },
   
