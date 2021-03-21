@@ -6,6 +6,7 @@ import Index from '../views/Index'
 import BookUpdate from '../views/BookUpdate'
 import FamilyLunch from '../views/memento/FamilyLunch'
 import Coffee from '../views/bridge/Coffee'
+import ChildrenMeal from '../views/builder/ChildrenMeal'
 
 Vue.use(VueRouter)
 
@@ -37,6 +38,11 @@ const routes = [
         name: "add coffee",
         component: Coffee
       },
+      {
+        path: "/AddChildrenMeal",
+        name: "add children meal",
+        component: ChildrenMeal
+      }
     ]
   },
   

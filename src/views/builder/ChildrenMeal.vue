@@ -7,10 +7,10 @@
         <el-row :gutter="12">
           <el-col :span="8">
             <el-card shadow="always">
-              <h4>Capacity</h4>
+              <h4>Toy</h4>
               <p>
                 <el-radio-group v-model="radio1_1">
-                  <el-radio v-for="item in capacity"
+                  <el-radio v-for="item in toy"
                     :label="item.id">{{item.name}}</el-radio>
                 </el-radio-group>
               </p>
@@ -18,26 +18,53 @@
           </el-col>
           <el-col :span="8">
             <el-card shadow="always">
-              <h4>Additive</h4>
+              <h4>Food</h4>
               <p>
                 <el-radio-group v-model="radio1_2">
-                  <el-radio v-for="item in additive"
+                  <el-radio v-for="item in food"
                     :label="item.id">{{item.name}}</el-radio>
 
                 </el-radio-group>
               </p>
             </el-card>
           </el-col>
+
+          <el-col :span="8">
+            <el-card shadow="always">
+              <h4>Drink</h4>
+              <p>
+                <el-radio-group v-model="radio1_3">
+                  <el-radio v-for="item in drink"
+                    :label="item.id">{{item.name}}</el-radio>
+
+                </el-radio-group>
+              </p>
+            </el-card>
+          </el-col>
+
+          <el-col :span="8">
+            <el-card shadow="always">
+              <h4>Vegetable</h4>
+              <p>
+                <el-radio-group v-model="radio1_4">
+                  <el-radio v-for="item in vegetable"
+                    :label="item.id">{{item.name}}</el-radio>
+
+                </el-radio-group>
+              </p>
+            </el-card>
+          </el-col>
+
         </el-row>
 
         <el-button style="margin-top: 12px;"
           @click="confirmMem">confirm</el-button>
       </el-timeline-item>
     </el-timeline>
-    <div v-for="(item,index) in coffeelist"
+    <div v-for="(item,index) in meallist"
       :key="index"
       class="text item">
-      {{'list content : ' + item.capacity }}+{{item.additive}}
+      {{'list content : ' + item.toy }}+{{item.food }}+{{item.drink }}+{{item.vegetable}}
     </div>
   </div>
 </template>
@@ -45,11 +72,15 @@
 export default {
   data() {
     return {
-      capacity: [],
-      additive: [],
-      coffeelist: [],
+      toy: [],
+      food: [],
+      drink: [],
+      vegetable: [],
+      meallist: [],
       radio1_1: 1,
       radio1_2: 1,
+      radio1_3: 1,
+      radio1_4: 1,
     };
   },
   methods: {
@@ -70,14 +101,16 @@ export default {
     confirmMem() {
       const _this = this;
       let data = {
-        capacity: this.capacity[this.radio1_1 - 1].name,
-        additive: this.additive[this.radio1_2 - 1].name,
+        toy: this.toy[this.radio1_1 - 1].name,
+        food: this.food[this.radio1_2 - 1].name,
+        drink: this.drink[this.radio1_3 - 1].name,
+        vegetable: this.vegetable[this.radio1_4 - 1].name,
       };
       axios
-        .post("http://localhost:8181/coffee/addCoffee", data)
+        .post("http://localhost:8181/childrenMeal/addChildrenMeal", data)
         .then(function (resp) {
           console.log(resp);
-          _this.coffeelist = resp.data;
+          _this.meallist = resp.data;
           if (resp.data != null) {
             _this.$alert("add success！", "message", {
               confirmButtonText: "confirm",
@@ -90,11 +123,13 @@ export default {
   created() {
     const _this = this;
     axios
-      .get("http://localhost:8181/coffee/findAllParts")
+      .get("http://localhost:8181/childrenMeal/findAllParts")
       .then(function (resp) {
         console.log(resp);
-        _this.capacity = resp.data.capacity;
-        _this.additive = resp.data.additive;
+        _this.toy = resp.data.toy;
+        _this.food = resp.data.food;
+        _this.drink = resp.data.drink;
+        _this.vegetable = resp.data.vegetable;
       });
   },
 };
