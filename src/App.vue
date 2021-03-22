@@ -2,7 +2,7 @@
   <div id="app">
     <el-container style="height: 500px; border: 1px solid #eee">
 
-      <el-aside width="200px"
+      <el-aside width="300px"
         style="background-color: rgb(238, 241, 246)">
 
         <el-menu router

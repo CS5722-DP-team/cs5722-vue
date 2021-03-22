@@ -7,6 +7,7 @@ import BookUpdate from '../views/BookUpdate'
 import FamilyLunch from '../views/memento/FamilyLunch'
 import Coffee from '../views/bridge/Coffee'
 import ChildrenMeal from '../views/builder/ChildrenMeal'
+import ChangeRoomToKitchen from '../views/adapter/ChangeRoomToKitchen'
 
 Vue.use(VueRouter)
 
@@ -30,18 +31,23 @@ const routes = [
       },
       {
         path: "/AddFamilyLunch",
-        name: "add family lunch",
+        name: "add family lunch(memento)",
         component: FamilyLunch
       },
       {
         path: "/AddCoffee",
-        name: "add coffee",
+        name: "add coffee(bridge)",
         component: Coffee
       },
       {
         path: "/AddChildrenMeal",
-        name: "add children meal",
+        name: "add children meal(builder)",
         component: ChildrenMeal
+      },
+      {
+        path: "/ChangeRoomToKitchen",
+        name: "change room to kitchen(adapter)",
+        component: ChangeRoomToKitchen
       }
     ]
   },
