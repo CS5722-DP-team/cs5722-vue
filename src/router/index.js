@@ -48,6 +48,11 @@ const routes = [
         path: "/ChangeRoomToKitchen",
         name: "change room to kitchen(adapter)",
         component: ChangeRoomToKitchen
+      },
+      {
+        path: "/test",
+        name: "test",
+        component: () => import("../views/test.vue")
       }
     ]
   },
