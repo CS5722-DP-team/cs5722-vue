@@ -1,17 +1,17 @@
 <template>
     <el-form style="width: 60%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
 
-        <el-form-item label="图书名称" prop="name">
+        <el-form-item label="NAME" prop="name">
             <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
 
-        <el-form-item label="作者" prop="author">
+        <el-form-item label="AUTHOR" prop="author">
             <el-input v-model="ruleForm.author"></el-input>
         </el-form-item>
 
         <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-            <el-button @click="resetForm('ruleForm')">重置</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')">submit</el-button>
+            <el-button @click="resetForm('ruleForm')">reset</el-button>
         </el-form-item>
 
     </el-form>
@@ -27,10 +27,10 @@
                 },
                 rules: {
                     name: [
-                        { required: true, message: '图书名称不能为空', trigger: 'blur' }
+                        { required: true, message: 'the name can not be empty', trigger: 'blur' }
                     ],
                     author:[
-                        { required: true, message: '作者不能为空', trigger: 'blur' }
+                        { required: true, message: 'the name can not be empty', trigger: 'blur' }
                     ]
                 }
             };
@@ -42,8 +42,8 @@
                     if (valid) {
                         axios.post('http://localhost:8181/book/save',this.ruleForm).then(function(resp){
                             if(resp.data == 'success'){
-                                _this.$alert('《'+_this.ruleForm.name+'》添加成功！', '消息', {
-                                    confirmButtonText: '确定',
+                                _this.$alert('《'+_this.ruleForm.name+'》Add success！', 'message', {
+                                    confirmButtonText: 'OK',
                                     callback: action => {
                                         _this.$router.push('/BookManage')
                                     }
