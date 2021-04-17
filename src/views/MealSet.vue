@@ -2,14 +2,9 @@
     <div>
         <table>
             <tr>
-                <td>Staple</td>
-                <td>Drink</td>
-                <td>Price</td>
-            </tr>
-            <tr>
-                <td>{{mealset.staple.name}}</td>
-                <td>{{mealset.drink.name}}</td>
-                <td>${{mealset.price}}</td>
+                <td><el-button @click="getMealSet1" >MealSet1</el-button></td>
+                <td><el-button @click="getMealSet2">MealSet2</el-button></td>
+                <td><el-button @click="getMealSet3">MealSet3</el-button></td>
             </tr>
         </table>
         <el-card class="box-card">
@@ -53,12 +48,32 @@
 
             }
         },
-        created(){
+        /*created(){
             const _this = this
             axios.get('http://localhost:8181/mealset/getmealset').then(function(resp){
                 _this.mealset = resp.data
                 console.log(resp.data)
             })
+        },*/
+        methods:{
+            getMealSet1(){
+                const _this = this
+                axios.get('http://localhost:8181/mealset/getmealset/1').then(function(resp){
+                    _this.mealset = resp.data
+                })
+            },
+            getMealSet2(){
+                const _this = this
+                axios.get('http://localhost:8181/mealset/getmealset/2').then(function(resp){
+                    _this.mealset = resp.data
+                })
+            },
+            getMealSet3(){
+                const _this = this
+                axios.get('http://localhost:8181/mealset/getmealset/3').then(function(resp){
+                    _this.mealset = resp.data
+                })
+            }
         }
     }
 </script>
