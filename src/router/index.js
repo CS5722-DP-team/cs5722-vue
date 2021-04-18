@@ -17,18 +17,18 @@ const routes = [
     name: "Food Management",
     component: Index,
     show: true,
-    redirect: "/BookManage",
+    redirect: "/AddFamilyLunch",
     children: [
-      {
-        path: "/BookManage",
-        name: "query book",
-        component: BookManage
-      },
-      {
-        path: "/AddBook",
-        name: "add book",
-        component: AddBook
-      },
+      // {
+      //   path: "/BookManage",
+      //   name: "query book",
+      //   component: BookManage
+      // },
+      // {
+      //   path: "/AddBook",
+      //   name: "add book",
+      //   component: AddBook
+      // },
       {
         path: "/AddFamilyLunch",
         name: "add family lunch(memento)",
