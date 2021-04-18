@@ -7,26 +7,26 @@
             <el-table-column
                     fixed
                     prop="id"
-                    label="编号"
+                    label="ID"
                     width="150">
             </el-table-column>
             <el-table-column
                     prop="name"
-                    label="图书名"
+                    label="NAME"
                     width="120">
             </el-table-column>
             <el-table-column
                     prop="author"
-                    label="作者"
+                    label="AUTHOR"
                     width="120">
             </el-table-column>
             <el-table-column
                     fixed="right"
-                    label="操作"
+                    label="list"
                     width="100">
                 <template slot-scope="scope">
-                    <el-button @click="edit(scope.row)" type="text" size="small">修改</el-button>
-                    <el-button @click="deleteBook(scope.row)" type="text" size="small">删除</el-button>
+                    <el-button @click="edit(scope.row)" type="text" size="small">edit</el-button>
+                    <el-button @click="deleteBook(scope.row)" type="text" size="small">delete</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -47,8 +47,8 @@
             deleteBook(row){
                 const _this = this
                 axios.delete('http://localhost:8181/book/deleteById/'+row.id).then(function(resp){
-                    _this.$alert('《'+row.name+'》删除成功！', '消息', {
-                        confirmButtonText: '确定',
+                    _this.$alert('《'+row.name+'》delete succuss！', 'message', {
+                        confirmButtonText: 'OK',
                         callback: action => {
                             window.location.reload()
                         }
