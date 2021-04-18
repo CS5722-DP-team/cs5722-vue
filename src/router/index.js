@@ -21,12 +21,12 @@ const routes = [
     children: [
       {
         path: "/BookManage",
-        name: "query book",
+        name: "query food",
         component: BookManage
       },
       {
         path: "/AddBook",
-        name: "add book",
+        name: "add food",
         component: AddBook
       },
       {
