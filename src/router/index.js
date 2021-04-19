@@ -18,7 +18,7 @@ const routes = [
     name: "Food Management",
     component: Index,
     show: true,
-    redirect: "/BookManage",
+    redirect: "/AddFamilyLunch",
     children: [
       {
         path: "/BookManage",
