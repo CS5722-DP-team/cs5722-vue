@@ -17,7 +17,7 @@
             </el-table-column>
             <el-table-column
                     prop="author"
-                    label="AUTHOR"
+                    label="COOK"
                     width="120">
             </el-table-column>
             <el-table-column
@@ -80,16 +80,16 @@
                 total:11,
                 tableData: [{
                     id: 1,
-                    name: '解忧杂货店',
-                    author: '东野圭吾'
+                    name: 'cooking fish',
+                    author: 'wang'
                 }, {
                     id: 2,
-                    name: '追风筝的人',
-                    author: '卡勒德·胡赛尼'
+                    name: 'autumn and chicken',
+                    author: 'Chris'
                 }, {
                     id: 3,
-                    name: '人间失格',
-                    author: '太宰治'
+                    name: 'spring and fish',
+                    author: 'lia'
                 }]
             }
         },
