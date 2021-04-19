@@ -8,6 +8,7 @@ import FamilyLunch from '../views/memento/FamilyLunch'
 import Coffee from '../views/bridge/Coffee'
 import ChildrenMeal from '../views/builder/ChildrenMeal'
 import ChangeRoomToKitchen from '../views/adapter/ChangeRoomToKitchen'
+import burgervisitor from '../views/visitor/burgervisitor'
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,11 @@ const routes = [
         path: "/mealset",
         name: "mealset",
         component: () => import("../views/MealSet.vue")
+      },
+      {
+        path:"/Displayburgervisitor",
+        name:"checkburger(visitor)",
+        component:burgervisitor
       }
     ]
   },
