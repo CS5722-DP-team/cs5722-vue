@@ -9,6 +9,7 @@ import Coffee from '../views/bridge/Coffee'
 import ChildrenMeal from '../views/builder/ChildrenMeal'
 import ChangeRoomToKitchen from '../views/adapter/ChangeRoomToKitchen'
 import burgervisitor from '../views/visitor/burgervisitor'
+import Login from '../views/Login'
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,11 @@ const routes = [
         path:"/Displayburgervisitor",
         name:"checkburger(visitor)",
         component:burgervisitor
+      },
+      {
+        path:"/login",
+        name:"Login(intercrptor)",
+        component:Login
       }
     ]
   },
