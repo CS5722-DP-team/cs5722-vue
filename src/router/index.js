@@ -19,16 +19,16 @@ const routes = [
     show: true,
     redirect: "/AddFamilyLunch",
     children: [
-      // {
-      //   path: "/BookManage",
-      //   name: "query book",
-      //   component: BookManage
-      // },
-      // {
-      //   path: "/AddBook",
-      //   name: "add book",
-      //   component: AddBook
-      // },
+      {
+        path: "/BookManage",
+        name: "query food",
+        component: BookManage
+      },
+      {
+        path: "/AddBook",
+        name: "add food",
+        component: AddBook
+      },
       {
         path: "/AddFamilyLunch",
         name: "add family lunch(memento)",
