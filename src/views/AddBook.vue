@@ -5,7 +5,7 @@
             <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
 
-        <el-form-item label="AUTHOR" prop="author">
+        <el-form-item label="COOK" prop="author">
             <el-input v-model="ruleForm.author"></el-input>
         </el-form-item>
 
